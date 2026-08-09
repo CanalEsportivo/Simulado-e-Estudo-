@@ -1,0 +1,6 @@
+{
+  "name": "Simulado TVDE",
+  "description": "Simulado e Estudo para Exame TVDE em Portugal com 316 Questões",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
