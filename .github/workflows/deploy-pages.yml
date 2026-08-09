@@ -71,6 +71,14 @@ jobs:
       - name: Preparar SPA
         run: cp dist/index.html dist/404.html
 
+      - name: Verificar conteúdo final do dist
+        run: |
+          echo "=== DIST FINAL ==="
+          ls -lh dist/assets/questoes/imagem_21.jpg
+          file dist/assets/questoes/imagem_21.jpg
+          echo "=== TAMANHO ==="
+          du -h dist/assets/questoes/imagem_21.jpg
+
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
