@@ -4106,7 +4106,7 @@ export const QUESTIONS: Question[] = [
         "text": "Todas as respostas anteriores estão corretas"
       }
     ],
-    "answer": "D",
+    "answer": "C",
     "explanation": "Em caso de incêndio, direcione o extintor com jatos curtos para a base das chamas, posicionando-se a favor do vento. A opção correta para a Questão 184 é a D: \"Todas as respostas anteriores estão corretas\"."
   },
   {
