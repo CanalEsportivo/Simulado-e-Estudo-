@@ -40,6 +40,34 @@ jobs:
           echo "Imagens publicadas:"
           find dist/assets/questoes -type f | wc -l
 
+      - name: Verificar imagens das questões
+        run: |
+          echo "=== VERIFICAÇÃO DAS IMAGENS ==="
+          TOTAL_REFERENCIADAS=$(grep -oE "/assets/questoes/[^\"']+" src/data/questions.ts | sort -u | wc -l)
+          TOTAL_ENCONTRADAS=0
+          TOTAL_AUSENTES=0
+          echo "Imagens referenciadas nas questões: $TOTAL_REFERENCIADAS"
+          echo ""
+          grep -oE "/assets/questoes/[^\"']+" src/data/questions.ts | sort -u | while read -r IMG; do
+            ARQUIVO="public${IMG}"
+            if [ -f "$ARQUIVO" ]; then
+              echo "OK: $IMG"
+            else
+              echo "AUSENTE: $IMG"
+            fi
+          done
+          echo ""
+          echo "=== ARQUIVOS NO DIST ==="
+          find dist/assets/questoes -type f | sort | wc -l
+          echo ""
+          echo "=== TESTE IMAGEM_21 ==="
+          if [ -f "dist/assets/questoes/imagem_21.jpg" ]; then
+            ls -lh "dist/assets/questoes/imagem_21.jpg"
+            file "dist/assets/questoes/imagem_21.jpg"
+          else
+            echo "ERRO: imagem_21.jpg NÃO ESTÁ NO DIST"
+          fi
+
       - name: Preparar SPA
         run: cp dist/index.html dist/404.html
 
