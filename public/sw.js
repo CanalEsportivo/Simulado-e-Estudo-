@@ -1,4 +1,4 @@
-const CACHE = "tvde-simulado-v4";
+const CACHE = "tvde-simulado-v5";
 
 const ASSETS = [
   "./",
@@ -13,6 +13,7 @@ self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE).then(cache => cache.addAll(ASSETS))
   );
+
   self.skipWaiting();
 });
 
@@ -21,11 +22,12 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(k => k !== CACHE)
-          .map(k => caches.delete(k))
+          .filter(key => key !== CACHE)
+          .map(key => caches.delete(key))
       )
     )
   );
+
   self.clients.claim();
 });
 
@@ -34,10 +36,16 @@ self.addEventListener("fetch", event => {
 
   event.respondWith(
     caches.match(event.request).then(cached => {
-      if (cached) return cached;
+      if (cached) {
+        return cached;
+      }
 
       return fetch(event.request)
         .then(response => {
+          if (!response || response.status !== 200) {
+            return response;
+          }
+
           const copy = response.clone();
 
           caches.open(CACHE).then(cache => {
