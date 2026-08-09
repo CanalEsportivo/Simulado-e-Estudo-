@@ -33,6 +33,13 @@ jobs:
       - name: Gerar build
         run: npm run build -- --base=/Simulado-e-Estudo-/
 
+      - name: Copiar imagens das questões
+        run: |
+          mkdir -p dist/assets/questoes
+          cp -R public/assets/questoes/. dist/assets/questoes/
+          echo "Imagens publicadas:"
+          find dist/assets/questoes -type f | wc -l
+
       - name: Preparar SPA
         run: cp dist/index.html dist/404.html
 
