@@ -4132,7 +4132,7 @@ export const QUESTIONS: Question[] = [
         "text": "O motorista deve reagir violentamente e se possível imobilizar o\nagressor"
       }
     ],
-    "answer": "D",
+    "answer": "C",
     "explanation": "Perante uma paragem cárdio-respiratória confirmada, o rácio normalizado de reanimação cárdio-pulmonar (RCP) em adultos consiste em 30 compressões torácicas alternadas com 2 ventilações de resgate. A opção correta para a Questão 185 é a C: \"30 compressões e 2 ventilações.\""
   },
   {
@@ -4945,7 +4945,7 @@ export const QUESTIONS: Question[] = [
     "idx": 216,
     "number": 217,
     "group": "Situações de emergência e primeiros socorros",
-    "question": "Para iniciar o socorro das vítimas é necessária a avaliação\ndesta, através do exame primário, o qual consiste em:",
+    "question": "Para iniciar o socorro das vítimas é necessária a avaliação desta, através do exame primário, o qual consiste em:",
     "alternatives": [
       {
         "letter": "A",
@@ -4964,7 +4964,7 @@ export const QUESTIONS: Question[] = [
         "text": "Avaliar somente a circulação e temperatura"
       }
     ],
-    "answer": "C",
+    "answer": "A",
     "explanation": "No exame primário da vítima, a observação e o diálogo sistemático para recolha de sinais e dados sobre as queixas (se consciente) permitem orientar os cuidados até à chegada do socorro médico. A opção correta para a Questão 217 é a C: \"Observar mais detalhadamente e em interroga-la.\""
   },
   {
@@ -6400,7 +6400,7 @@ export const QUESTIONS: Question[] = [
         "text": "Falso"
       }
     ],
-    "answer": "B",
+    "answer": "A",
     "explanation": "A eco-condução consiste na antecipação das condições do tráfego, condução em rotações moderadas e manutenção dos pneus para reduzir consumos e emissões. A opção correta para a Questão 283 é a B: \"Falso\"."
   },
   {
@@ -6440,7 +6440,7 @@ export const QUESTIONS: Question[] = [
         "text": "Andar sempre com o ar condicionado ligado."
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "explanation": "A eco-condução consiste na antecipação das condições do tráfego, condução em rotações moderadas e manutenção dos pneus para reduzir consumos e emissões. A opção correta para a Questão 285 é a A: \"Conduzir com o motor a altas rotações.\"."
   },
   {
