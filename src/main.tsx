@@ -4,13 +4,16 @@ import App from './App.tsx';
 import {QUESTIONS} from './data/questions';
 import './index.css';
 
-// GitHub Pages publica este projeto dentro de /Simulado-e-Estudo-/.
-// As questões usam caminhos /assets/..., que apontam para a raiz
-// do domínio e não para a raiz do projeto. Convertemos para caminhos
-// relativos para funcionar corretamente no GitHub Pages.
+// Corrige os caminhos das imagens para funcionar no GitHub Pages.
+// O site é publicado em:
+// /Simulado-e-Estudo-/
 QUESTIONS.forEach(question => {
-  if (question.imageUrl?.startsWith('/assets/')) {
-    question.imageUrl = `.${question.imageUrl}`;
+  if (question.imageUrl) {
+    const path = question.imageUrl.replace(/^\/+/, '');
+
+    if (path.startsWith('assets/')) {
+      question.imageUrl = `${import.meta.env.BASE_URL}${path}`;
+    }
   }
 });
 
